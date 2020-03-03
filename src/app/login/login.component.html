@@ -1,0 +1,25 @@
+<app-header></app-header>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">   
+
+<div class='hero'>
+  <div class="hero-one"></div>
+  <div class="hero-two"></div>
+  <h1 class="header-title">
+     <span class="header-primary">Login</span>
+     <input type='text' placeholder='Username' [(ngModel)]="user.username"
+        [ngModelOptions]="{standalone: true}" placeholder="User Name" required
+         class='input-line full-width'>
+        
+        <input type='password' placeholder='Password' type="password" placeholder="Password"  
+        [(ngModel)]="user.password" 
+        [ngModelOptions]="{standalone: true}" name="password" required 
+        class='input-line full-width'>
+        
+        <button class='ghost-round full-width' (click)="login()">Login</button>
+        
+     <span class="header-primary"><pre>{{valide}}</pre></span></h1>
+</div>
+
+
+<app-footer></app-footer>
+

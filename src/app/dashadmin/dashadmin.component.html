@@ -1,0 +1,151 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap 4 Dashboard</title>
+  <base target="_self">
+  <meta name="description" content="A Bootstrap 4 admin dashboard theme that will get you started. The sidebar toggles off-canvas on smaller screens. This example also include large stat blocks, modal and cards. The top navbar is controlled by a separate hamburger toggle button."
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" value="notranslate">
+  <link rel="shortcut icon" href="/images/cp_ico.png">
+
+
+  <!--stylesheets / link tags loaded here-->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-fixed-top navbar-toggleable-sm navbar navbar-dark bg-dark mb-3 "
+   >
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="flex-row d-flex">
+      <a class="navbar-brand mb-1" [routerLink]="['/formClient']">Prive Coaching</a>
+      <button type="button" class="hidden-md-up navbar-toggler" 
+      data-toggle="offcanvas" title="Toggle responsive left sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse" id="collapsingNavbar">
+      <ul class="navbar-nav">
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <button type="button" class="btn btn-light">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid" id="main">
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
+        <ul class="nav flex-column pl-1">
+        
+         
+        </ul>
+      </div>
+      <!--/col-->
+
+      <div class="col-md-9 col-lg-10 main">
+
+        <!--toggle sidebar button
+            <p class="hidden-md-up">
+                <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Menu</button>
+            </p>-->
+
+        <h1 class="display-2 hidden-xs-down">
+            Admin Dashboard
+            </h1>
+        <h2>coach Liste</h2>
+
+        
+      
+        <!--/row-->
+
+
+
+        <hr>
+        <div class="row mb-3">
+          <div class="col-lg-9 col-md-8">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th>id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>adresse_mail</th>
+                    <th>Phone number</th>
+                    <th>Delete coach</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr *ngFor="let item of  items">
+                    <td>{{item.idcoach}}</td>
+                    <td>{{item.nom}}</td>
+                    <td>{{item.prenom}}</td>
+                    <td>{{item.adresse_mail}}</td>
+                    <td>{{item.tel}}</td>
+                    <button type="button" class="btn btn-danger" 
+                    (click)="deletecoach(item.idcoach)">Delete</button>
+                  
+                  </tr>
+                 
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--/row-->
+
+        <h2>Client Liste</h2>
+        <hr>
+        <div class="row mb-3">
+          <div class="col-lg-9 col-md-8">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th>id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>adresse_mail</th>
+                    <th>User Name</th>
+                    <th>Delete client</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr *ngFor="let c of  client">
+                    <td>{{c.id}}</td>
+                    <td>{{c.nom}}</td>
+                    <td>{{c.prenom}}</td>
+                    <td>{{c.adresse_mail}}</td>
+                    <td>{{c.username}}</td>
+                    <button type="button" class="btn btn-danger" (click)="deleteclient(c.idclient)">Delete</button>
+                  
+                  </tr>
+                 
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+       
+  
+
+
+
+  

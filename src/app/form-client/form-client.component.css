@@ -1,0 +1,17 @@
+.example-container {
+	display: flex;
+	flex-direction: column;
+	margin-left: 50px;
+	margin-top: 20px;
+  }
+  
+  .example-container > * {
+	width: 500px;
+  }
+
+
+.img{ 
+	margin-left: 700px;
+    width: 300%;
+    height: 50%;}
+    
