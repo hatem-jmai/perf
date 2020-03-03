@@ -3,6 +3,8 @@ import {HttpClient,HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {coach} from './entity/coach';
 import { client } from './entity/client';
+import { LoginComponent } from '../login/login.component';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -10,8 +12,11 @@ import { client } from './entity/client';
 })
 export class AuthService {
 
+  username='';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    
+   }
 
   creatclient(client: object):Observable<object>{
     return this.http.post('http://localhost:3000/addclient',client)
@@ -44,10 +49,14 @@ export class AuthService {
     return this.http.put('http://localhost:3000/client/'+id,client)  ;
   }
 
-  updatecoach(id:number,coach: object):Observable<object> {
-    return this.http.put('http://localhost:3000/coachs/'+id,coach)  ;
+  updatecoach(username:string,coach: coach):Observable<object> {
+    return this.http.put('http://localhost:3000/coachs/'+username,coach)  ;
   }
-
+/*
+  getUsername(){
+    return this.username=this.login.username;
+  }
+*/
   
   
 

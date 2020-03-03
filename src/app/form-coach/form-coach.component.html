@@ -5,36 +5,28 @@
 
 
   <mat-form-field>
-    <input matInput placeholder="first Name" [formControl]="name" [(ngModel)]="user.nom">
+    <input matInput placeholder="first Name"  [(ngModel)]="user.nom">
   </mat-form-field>
-  <mat-error class="alert alert-danger" *ngIf="name.hasError('required')">
-    FirstName is required
-  </mat-error>
+ 
 
   <mat-form-field>  
-    <input matInput placeholder="Last Name" [formControl]="lastname" [(ngModel)]="user.prenom">
+    <input matInput placeholder="Last Name"  [(ngModel)]="user.prenom">
   </mat-form-field>
-  <mat-error class="alert alert-danger" *ngIf="lastname.hasError('required')">
-    lastName is required
-  </mat-error>
+  
   
   <mat-form-field>
     <input matInput placeholder="User name" [formControl]="login" [(ngModel)]="user.username">
   </mat-form-field>
-  <mat-error class="alert alert-danger" *ngIf="login.hasError('required')">
-   UserName is required
-  </mat-error>
+  
   
   <mat-form-field>
-    <mat-select placeholder="Gendre" [formControl]="gender" [(ngModel)]="user.genre">
+    <mat-select placeholder="Gendre"  [(ngModel)]="user.genre">
       <mat-option *ngFor="let genre of gendre" [value]="genre">
         {{genre.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-error class="alert alert-danger" *ngIf="gender.hasError('required')">
-    Gendre is required
-   </mat-error>
+ 
 
   <mat-form-field>
     <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="user.date_naiss">
@@ -43,13 +35,10 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Cin" [formControl]="cin" required 
+    <input matInput placeholder="Cin"  required 
     type="number" class="example-left-align" [(ngModel)]="user.cin">
   </mat-form-field>
-  
-  <mat-error class="alert alert-danger" *ngIf="cin.hasError('required')">
-    cin is required
-   </mat-error>
+ 
   
 
 
@@ -66,44 +55,35 @@
 
   <mat-form-field>
     <input matInput placeholder="Enter your email" 
-    [formControl]="email" required [(ngModel)]="user.adresse_mail"> 
+     required [(ngModel)]="user.adresse_mail"> 
 </mat-form-field>
-<mat-error class="alert alert-danger"
-   *ngIf="email.hasError('email') && !email.hasError('required')">
-    Please enter a valid email address
-  </mat-error>
-  <mat-error class="alert alert-danger" *ngIf="email.hasError('required')">
-    Email is required
-  </mat-error> 
+
+ 
 
 
 
 
   <mat-form-field>
-    <input matInput placeholder="Enter your password" type="password" [formControl]="password" required
+    <input matInput placeholder="Enter your password" type="password"  required
      [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" 
     [attr.aria-pressed]="hide">
     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
-  <mat-error class="alert alert-danger" *ngIf="password.hasError('required')">
-    Password is required</mat-error>
-  <mat-error class="alert alert-danger" *ngIf="password.hasError('minlength')">
-    Password must have at least {{minPw}} characters</mat-error>
+
+ 
 
 
 
 
   <mat-form-field>
     <input matInput 
-    placeholder="Phone Number" [formControl]="PhoneNumber" type="number" class="example-left-align"
+    placeholder="Phone Number"  type="number" class="example-left-align"
      name="tel" [(ngModel)]="user.tel" ng-minlength = "8"
     ng-maxlength = "8">
   </mat-form-field>
-  <mat-error class="alert alert-danger" *ngIf="email.hasError('required')">
-    Phone Number is required
-  </mat-error> 
+ 
 
 
   <mat-form-field>

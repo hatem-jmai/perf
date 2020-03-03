@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { login } from '../service/entity/login';
 import { Router } from '@angular/router';
@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   result:object;
   ch:any;
   valide:string;
+  username:string;
   constructor(private userService: AuthService, private chat:ChatService , private router: Router) { }
 
   ngOnInit() {
@@ -26,9 +27,11 @@ export class LoginComponent implements OnInit {
    .subscribe((data:any) =>{
         console.log(data),
         error => console.log(error),
-        this.ch=data;
+        this.ch=data.type;
+        this.username=data.username;
+        console.log(this.username);
+        this.userService.username=this.username;
         console.log(this.ch);
-        this.chat.username = data.username ;
         if(this.ch=="coach")
       this.router.navigate(['/dcoach']);  
       if(this.ch=="client")

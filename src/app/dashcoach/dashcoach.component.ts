@@ -10,20 +10,21 @@ import { AuthService } from '../service/auth.service';
 export class DashcoachComponent implements OnInit {
   user:coach;
   cl=[];
+  username:string;
   constructor(private authservice:AuthService) { }
 
   ngOnInit() {
     this.user=new coach();
-
-    this.authservice.getcoach().toPromise().then(data => {
-      console.log(data);
-      for (let key in data)
-      if(data.hasOwnProperty(key))
-      this.cl.push(data[key]);
-  })
+    console.log(this.authservice.username);
+    this.username=this.authservice.username;
+    
   }
-  update(id:number){
-    console.log(id)
-  this.authservice.updatecoach(id,this.user).subscribe(data => console.log(data), 
-    error1 => console.log(error1));
-}}
+  update(){
+    console.log(this.user);
+    console.log(this.username);
+  this.authservice.updatecoach(this.username,this.user).subscribe((data:any) => {
+    console.log(data);
+    this.username=data;
+});
+}
+}
