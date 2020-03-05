@@ -8,25 +8,24 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./updateclient.component.css']
 })
 export class UpdateclientComponent implements OnInit {
-  user: client  ;
- id:number;
+  user: client;
+ username:string;
   cl=[];
+  
   constructor(private authservice:AuthService ) { 
   
   }
 
   ngOnInit() {
     this.user=new client();
-
-    this.authservice.getclient().toPromise().then(data => {
-      console.log(data);
-      for (let key in data)
-      if(data.hasOwnProperty(key))
-      this.cl.push(data[key]);
-  })
+    console.log(this.authservice.username);
+    this.username=this.authservice.username;
   }
-  update(id:number){
+  update(){
     console.log(this.user)
-  this.authservice.updateclient(id,this.user).subscribe(data => console.log(data), 
-    error1 => console.log(error1));
-}}
+    this.authservice.updateclient(this.username,this.user).subscribe((data:any) => {
+    console.log(data);
+    this.username=data;
+    });
+  }
+}

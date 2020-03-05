@@ -45,18 +45,16 @@ export class AuthService {
     return this.http.delete('http://localhost:3000/client/'+id);
   }
   
-  updateclient(id:number,client: object):Observable<object> {
-    return this.http.put('http://localhost:3000/client/'+id,client)  ;
+  updateclient(username:string,client: client):Observable<object> {
+    return this.http.put('http://localhost:3000/client/'+username,client)  ;
   }
 
   updatecoach(username:string,coach: coach):Observable<object> {
     return this.http.put('http://localhost:3000/coachs/'+username,coach)  ;
   }
-/*
-  getUsername(){
-    return this.username=this.login.username;
+  getOneCoach(username:string){
+    return this.http.get('http://localhost:3000/coach/'+username);
   }
-*/
   
   
 

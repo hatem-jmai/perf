@@ -1,0 +1,46 @@
+<app-dashcoach></app-dashcoach>
+
+<form>  
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4"  >First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="user.nom" name="nom"
+             placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4"  >Last Name</label>
+            <input type="text" class="form-control" name="prenom "[(ngModel)]="user.prenom"
+             placeholder="Email">
+          </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4"  >Email</label>
+        <input type="email" class="form-control" name="mail" [(ngModel)]="user.adresse_mail"
+         placeholder="Email">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4" >Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="user.password"
+         placeholder="new Password">
+      </div>
+    </div>
+   
+   
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">UserName</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="user.username"
+           >
+        </div>
+       
+        <div class="form-group col-md-2">
+          <label for="inputZip">Phone number</label>
+          <input type="text" name="username" [(ngModel)]="user.tel"
+          class="form-control" id="inputZip">
+        </div>
+      </div>
+    <div class="form-group">
+      
+    </div>
+    <button type="submit"  class="btn"  
+         (click)="update()"> Update</button>
+  </form>

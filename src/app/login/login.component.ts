@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.userService.username=this.username;
         console.log(this.ch);
         if(this.ch=="coach")
-      this.router.navigate(['/dcoach']);  
+      this.router.navigate(['/profile']);  
       if(this.ch=="client")
       this.router.navigate(['/dclient']);
       if(this.ch=="false") 

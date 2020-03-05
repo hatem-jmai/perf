@@ -23,6 +23,9 @@ import { DashcoachComponent } from './dashcoach/dashcoach.component';
 import { UpdateclientComponent } from './updateclient/updateclient.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatComponent } from './chat/chat.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UpdatecoachComponent } from './updatecoach/updatecoach.component';
+import { ProfileclientComponent } from './profileclient/profileclient.component';
 
 
 @NgModule({
@@ -48,6 +51,12 @@ import { ChatComponent } from './chat/chat.component';
     ContactComponent,
     
     ChatComponent,
+    
+    ProfileComponent,
+    
+    UpdatecoachComponent,
+    
+    ProfileclientComponent,
   
   ],
   imports: [

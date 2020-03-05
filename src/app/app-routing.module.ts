@@ -12,11 +12,15 @@ import { UpdateclientComponent } from './updateclient/updateclient.component';
 import { DashcoachComponent } from './dashcoach/dashcoach.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatComponent } from './chat/chat.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UpdatecoachComponent } from './updatecoach/updatecoach.component';
+import { ProfileclientComponent } from './profileclient/profileclient.component';
 
 
 const routes: Routes = [
   {path:'acceuil',component:BodyhomeComponent},
   {path:'signup',component:SignupComponent},
+  {path:'profile',component:ProfileComponent},
   {path:'login',component:LoginComponent},
   {path:'formCoach',component:FormCoachComponent},
   {path:'formClient',component:FormClientComponent},
@@ -26,7 +30,8 @@ const routes: Routes = [
   {path:'dcoach',component:DashcoachComponent},
   {path:'contact',component:ContactComponent},
   {path:'chat',component:ChatComponent},
-
+  {path:'updatecoach',component:UpdatecoachComponent},
+  {path:'profileclient',component:ProfileclientComponent},
   {path:'',redirectTo:'acceuil',pathMatch:'full'}
 ];
 
