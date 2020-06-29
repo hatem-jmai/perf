@@ -93,15 +93,18 @@ export class FormCoachComponent implements OnInit {
 
   add() {
     console.log(this.user);
-    this.userService.createcoach(this.user).subscribe
-    (res => this.route.navigate(['/login']) ,
-     error1 => {
-     confirm("ivalide Registre"),
-       console.log(error1)} );
+    this.userService.createcoach(this.user).subscribe(res => {
+      console.log(res),
+      this.route.navigate(['/login']);
+      /* error1 => {
+      confirm("ivalide Registre"),
+        console.log(error1)}  */
+    });
+     
 
      
      
-    //image upload
+    /* //image upload
     const formData = new FormData();
     formData.append('file', this.fileData);
     console.log(this.fileData);
@@ -109,7 +112,8 @@ export class FormCoachComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         alert('SUCCESS !!');
-      })
+      }); */
+      
 
 
     }

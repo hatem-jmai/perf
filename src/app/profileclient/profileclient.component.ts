@@ -9,13 +9,13 @@ import { client } from '../service/entity/client';
 })
 export class ProfileclientComponent implements OnInit {
   username:string;
-  user:client;
+  user:client=new client();
   items=[];
   constructor(private authservice:AuthService) { }
 
   ngOnInit() {
-    this.user=new client();
     this.username=this.authservice.username;
+    console.log(this.authservice.username);
     this.getOneClient();
   }
 
@@ -23,11 +23,11 @@ export class ProfileclientComponent implements OnInit {
     console.log(this.username);
     this.authservice.getOneClient(this.username).subscribe((data:any) => {
     console.log(data);
-    this.user=data;
+    //this.user=data;
     for (let key in data)
     if(data.hasOwnProperty(key))
     this.items.push(data[key]);
-console.log(this.items)
+    console.log(this.items)
   });
 }
 }

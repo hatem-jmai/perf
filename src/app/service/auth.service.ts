@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  id_client='';
-  username='';
-  id_coach=''
+  id_client:string;
+  username:string;
+  id_coach:string;
 
   constructor(private http:HttpClient) {
     
@@ -22,16 +22,19 @@ export class AuthService {
   creatclient(client: object):Observable<object>{
     return this.http.post('http://localhost:3000/addclient',client)
   }
-  createcoach(coach: object): Observable<object> {
-    return this.http.post(`http://localhost:3000/addcoachs`, coach);
+  createcoach(coach: coach): Observable<object> {
+    return this.http.post('http://localhost:3000/addcoachs', coach);
   }
 
   addcontact(contact :object):Observable<object>{
-    return this.http.post(`http://localhost:3000/addcontact`,contact)
+    return this.http.post('http://localhost:3000/addcontact',contact)
   }
 
   loginCoach(coach: object): Observable<any>{ 
     return this.http.post(`http://localhost:3000/coachs/login`,coach);
+  }
+  loginClient(coach: object): Observable<any>{ 
+    return this.http.post(`http://localhost:3000/clients/login`,coach);
   }
 
   getcoach():Observable<any>{

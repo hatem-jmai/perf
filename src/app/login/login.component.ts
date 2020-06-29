@@ -12,35 +12,35 @@ import { ChatService } from '../chat.service';
 export class LoginComponent implements OnInit {
   user: login ;
   result:object;
-  ch:any;
   valide:string;
   username:string;
+  type:string;
   constructor(private userService: AuthService, private chat:ChatService , private router: Router) { }
 
   ngOnInit() {
     this.user =new login();
-    console.log(this.ch);
   }
-  login(){
+  loginClient(){
     console.log(this.user);
-   this.result= this.userService.loginCoach(this.user)
-   .subscribe((data:any) =>{
-        console.log(data),
-        confirm("UserName or password false"),
+   this.userService.loginClient(this.user).subscribe((data:any) =>{
+        console.log(data);
         error => {
-        console.log(error)},
-        this.ch=data.type;
-        this.username=data.username;
-        console.log(this.username);
-        this.userService.username=this.username;
-        console.log(this.ch);
-        if(this.ch=="coach")
-      this.router.navigate(['/profile']);  
-      if(this.ch=="client")
-      this.router.navigate(['/dclient']);
-      if(this.ch=="false") 
-      confirm("UserName or password false");
+        console.log(error)};
+       
+      if(data == "client"){
+        this.userService.username=this.user.username;
+        this.router.navigate(['/dclient']);
+       }
    });
    
+  }
+  loginCoach(){
+    this.userService.loginCoach(this.user).subscribe((data:any) =>{
+      console.log(data);
+      if(data == "coach"){
+        this.userService.username=this.user.username;
+        this.router.navigate(['/profile']); 
+      }
+    });
   }
 }

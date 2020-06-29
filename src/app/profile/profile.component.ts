@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
       for (let key in data)
       if(data.hasOwnProperty(key))
       this.items.push(data[key]);
-console.log(this.items)
+      console.log(this.items)
     });
   }
 
