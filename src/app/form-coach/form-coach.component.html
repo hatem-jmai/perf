@@ -1,115 +1,115 @@
 <app-header></app-header>
-
-<form [formGroup]="registerForm"   (ngSubmit)="registerForm" novalidate></form>
-<div class="example-container">
-
-
-  <mat-form-field>
-    <input matInput placeholder="first Name"  [(ngModel)]="user.nom">
-  </mat-form-field>
- 
-
-  <mat-form-field>  
-    <input matInput placeholder="Last Name"  [(ngModel)]="user.prenom">
-  </mat-form-field>
+<form [formGroup]="formcoach"  (ngSubmit)="registerForm.valid" novalidate></form>
+<div class="example-container" >
   
   
-  <mat-form-field>
-    <input matInput placeholder="User name" [formControl]="login" [(ngModel)]="user.username">
-  </mat-form-field>
-  
-  
-  <mat-form-field>
-    <mat-select placeholder="Gendre"  [(ngModel)]="user.genre">
-      <mat-option *ngFor="let genre of gendre" [value]="genre">
-        {{genre.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
- 
+    <div class="card">
+      <div class="container">
+        <h3 class="title">Coach Form</h3>
+        <mat-form-field>
+          <input matInput placeholder="first Name" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="user.nom">
+        </mat-form-field>
+       
+      
+        <mat-form-field>  
+          <input matInput placeholder="Last Name"  [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        
+        
+        <mat-form-field>
+          <input matInput placeholder="User name" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.username">
+        </mat-form-field>
+        
+        
+        <mat-form-field>
+          <mat-select placeholder="Gendre"  [(ngModel)]="user.genre" [ngModelOptions]="{standalone: true}">
+            <mat-option *ngFor="let genre of gendre" [value]="genre.viewValue">
+              {{genre.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+       
+      
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.date_naiss">
+          <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <input matInput placeholder="Cin"  required 
+          type="number" class="example-left-align" [(ngModel)]="user.cin" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+       
+        
+      
+      
+        <mat-form-field>
+          <mat-select placeholder="Type" [(ngModel)]="user.type" [ngModelOptions]="{standalone: true}">
+            <mat-option *ngFor="let type of types" [value]="type.viewValue">
+              {{type.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+      
+      
+      
+        <mat-form-field>
+          <input matInput placeholder="Enter your email" 
+           required [(ngModel)]="user.adresse_mail" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      
+      
+        <mat-form-field>
+          <input matInput placeholder="Enter your password" type="password"  required
+           [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+        
+        </mat-form-field>
+      
+       
+      
+      
+      
+      
+        <mat-form-field>
+          <input matInput 
+          placeholder="Phone Number"  type="number" class="example-left-align"
+           name="tel" [(ngModel)]="user.tel" ng-minlength = "8" [ngModelOptions]="{standalone: true}"
+          ng-maxlength = "8">
+        </mat-form-field>
+       
+      
+      
+        <mat-form-field>
+          <mat-select placeholder="Gouvernorat" [(ngModel)]="user.gouernorat" [ngModelOptions]="{standalone: true}"> 
+            <mat-option *ngFor="let gouvernerat of gouvernerats" [value]="gouvernerat.viewValue">
+            {{gouvernerat.viewValue}}
+          </mat-option>
+          </mat-select>
+        
+        </mat-form-field>
+      
+        <mat-form-field>
+         
+          <mat-label>Describtion</mat-label>
+         <textarea matInput placeholder="Describe yourself please"
+          [(ngModel)]="user.ville" [ngModelOptions]="{standalone: true}"></textarea>
+       
+        </mat-form-field>
+      
+       
+        
+          <input type="file" placeholder="certificat" [(ngModel)]="user.certificat" [ngModelOptions]="{standalone: true}">
+        
+      
+      
+        <button mat-raised-button class="btn btn-outline-success" 
+        type="submit"   (click)="add()">SIGN UP</button>
+        
+      </div>
+  </div>
+ </div>
+<app-footer></app-footer>
 
-  <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="user.date_naiss">
-    <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="Cin"  required 
-    type="number" class="example-left-align" [(ngModel)]="user.cin">
-  </mat-form-field>
- 
-  
-
-
-  <mat-form-field>
-    <mat-select placeholder="Type" [(ngModel)]="user.type">
-      <mat-option *ngFor="let type of types" [value]="type.viewValue">
-        {{type.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-
-
-
-  <mat-form-field>
-    <input matInput placeholder="Enter your email" 
-     required [(ngModel)]="user.adresse_mail"> 
-</mat-form-field>
-
- 
-
-
-
-
-  <mat-form-field>
-    <input matInput placeholder="Enter your password" type="password"  required
-     [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" 
-    [attr.aria-pressed]="hide">
-    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-  </mat-form-field>
-
- 
-
-
-
-
-  <mat-form-field>
-    <input matInput 
-    placeholder="Phone Number"  type="number" class="example-left-align"
-     name="tel" [(ngModel)]="user.tel" ng-minlength = "8"
-    ng-maxlength = "8">
-  </mat-form-field>
- 
-
-
-  <mat-form-field>
-    <mat-select placeholder="Gouvernorat" [(ngModel)]="user.gouernorat"> 
-      <mat-option *ngFor="let gouvernerat of gouvernerats" [value]="gouvernerat.viewValue">
-      {{gouvernerat.viewValue}}
-    </mat-option>
-    </mat-select>
-  
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select placeholder="Ville" [(ngModel)]="user.ville" >
-      <mat-option *ngFor="let Ville of villes" [value]="Ville.viewValue">
-        {{Ville.viewValue}}
-      </mat-option>
-    </mat-select>
- 
-  </mat-form-field>
-
- 
-  
-    <input type="file" placeholder="certificat" [(ngModel)]="user.certificat">
-  
-
-
-  <button mat-raised-button class="btn btn-outline-success" 
-  type="submit"  (click)="add()">SIGN UP</button>
-</div>

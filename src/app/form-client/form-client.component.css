@@ -1,4 +1,6 @@
 .example-container {
+	background: url("/assets/img/coachprive.jpg");
+
 	display: flex;
 	flex-direction: column;
 	margin-left: 50px;
@@ -14,4 +16,53 @@
 	margin-left: 700px;
     width: 300%;
     height: 50%;}
-    
+	
+
+
+.left{
+	margin-left: 250px;
+}
+	  
+	  
+	  
+	  .card {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		margin: 8px;
+		height: 500px;
+		margin-left: 450px;
+		width: 800px;
+	  }
+	  
+	  
+	
+	  
+	 .container{
+		 margin: 10px;
+	 }
+	  .title{
+		  color :rgb(10, 161, 136);
+		  margin-left: 130px;
+	  }
+	  
+	  .button {
+		border: none;
+		outline: 0;
+		display: inline-block;
+		padding: 8px;
+		color: white;
+		background-color: rgb(10, 161, 136);
+		text-align: center;
+		cursor: pointer;
+		width: 100%;
+	  }
+	  
+	  .button:hover {
+		background-color: #555;
+	  }
+	  
+	  @media screen and (max-width: 650px) {
+		.column {
+		  width: 100%;
+		  display: block;
+		}
+	  }

@@ -26,6 +26,8 @@ export class UpdateclientComponent implements OnInit {
     this.authservice.updateclient(this.username,this.user).subscribe((data:any) => {
     console.log(data);
     this.username=data;
+console.log(this.username)
+
     });
   }
 }

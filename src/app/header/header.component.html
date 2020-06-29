@@ -19,26 +19,16 @@
          <a [routerLink]="['/acceuil']" >Home</a>
         </a>
   
-        <a class="navbar-item">
-          Documentation
+        <a class="navbar-item" [routerLink]="['/contact']">
+          Contact Us
         </a>
   
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
+          <a class="navbar-link"  [routerLink]="['/about']">
+            About
           </a>
   
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
           
-            <a class="navbar-item" [routerLink]="['/contact']">
-              Contact Us
-            </a>
-            
-            
-          </div>
         </div>
       </div>
   

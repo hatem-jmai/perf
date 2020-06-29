@@ -1,208 +1,198 @@
-<div class="container main-secction">
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12 image-section">
-            <img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
+
+    <head>
+      <meta charset="utf-8">
+      <title>Bootstrap 4 Dashboard</title>
+      <base target="_self">
+      <meta name="description" content="A Bootstrap 4 admin dashboard theme that will get you started. The sidebar toggles off-canvas on smaller screens. This example also include large stat blocks, modal and cards. The top navbar is controlled by a separate hamburger toggle button."
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google" value="notranslate">
+      <link rel="shortcut icon" href="/images/cp_ico.png">
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    
+    
+      <!--stylesheets / link tags loaded here-->
+    
+    
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    
+    </head>
+    
+    <body>
+      <nav class="navbar navbar-fixed-top navbar-toggleable-sm navbar-inverse navbar navbar-light mb-3" 
+      style="background-color: #2d9455;" >
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+        data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="flex-row d-flex">
+          <a class="navbar-brand mb-1" href="#">Prive Coaching</a>
+          <button type="button" class="hidden-md-up navbar-toggler" data-toggle="offcanvas" 
+          title="Toggle responsive left sidebar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-        <div class="row user-left-part">
-            <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
-                <div class="row ">
-                    <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-                        <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="rounded-circle">
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
-                        <button id="btn-contact" (click)="clearModal()" data-toggle="modal" data-target="#contact" class="btn btn-success btn-block follow">Contactarme</button> 
-                        <button class="btn btn-warning btn-block">Descargar Curriculum</button>                               
-                    </div>
-                    <div class="row user-detail-row">
-                        <div class="col-md-12 col-sm-12 user-detail-section2 pull-left">
-                            <div class="border"></div>
-                            <p>FOLLOWER</p>
-                            <span>320</span>
-                        </div>                           
-                    </div>
-                   
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+          <ul class="navbar-nav">
+          
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <button type="button" class="btn btn-light" [routerLink]="['/chat']">Chat Live</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid" id="main">
+        <div class="row row-offcanvas row-offcanvas-left">
+          <div class="col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
+            <ul class="nav flex-column pl-1">
+              
+              
+              <li class="nav-item">
+                <a class="nav-link"  [routerLink]="['/dclient']" >
+                <mat-icon>dns</mat-icon>Home</a>
+              </li>
+               
+                <li class="nav-item">
+                  <a class="nav-link"  [routerLink]="['/profileclient']" >
+                  <mat-icon>dns</mat-icon>My Profile</a>
+                </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/updateclient']" >
+                  <mat-icon>dns</mat-icon>Update Profile</a>
+                </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="">
+                  <mat-icon>exit_to_app</mat-icon>Logout</a>
+              </li>
+            </ul>
+          </div>
+<div class="container emp-profile">
+    
+    
+    <form method="post">
+        <div class="row">
+            
+
+
+            <div class="col-md-6">
+                <div class="profile-head" *ngFor="let item of items">
+                            <h5>
+                                <p>{{item.nom}} {{item.prenom}}</p>
+                            </h5>
+                            <h6>
+                                <p>{{item.adresse}}</p>
+                            </h6>
+                            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-9 col-sm-9 col-xs-12 pull-right profile-right-section">
-                <div class="row profile-right-section-row">
-                    <div class="col-md-12 profile-header">
-                        <div class="row">
-                            <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
-                                <h1>Juan Perez</h1>
-                                <h5>Developer</h5>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-6 profile-header-section1 text-right pull-rigth">
-                                <a href="/search" class="btn btn-primary btn-block">Seguir buscando</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-8">
-                                    <ul class="nav nav-tabs" role="tablist">
-                                            <li class="nav-item">
-                                              <a class="nav-link active" href="#profile" role="tab" data-toggle="tab"><i class="fas fa-user-circle"></i> Perfil Profesional</a>
-                                            </li>
-                                            <li class="nav-item">
-                                              <a class="nav-link" href="#buzz" role="tab" data-toggle="tab"><i class="fas fa-info-circle"></i> Información Detallada</a>
-                                            </li>                                                
-                                          </ul>
-                                          
-                                          <!-- Tab panes -->
-                                          <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade show active" id="profile">
-                                                    <div class="row">
-                                                            <div class="col-md-2">
-                                                                <label>ID</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>509230671</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-2">
-                                                                <label>Nombre</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>Juan Perez</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-2">
-                                                                <label>Email</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>juanp@gmail.com</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-2">
-                                                                <label>Teléfono</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>12345678</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-2">
-                                                                <label>Profesion</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>Developer</p>
-                                                            </div>
-                                                        </div>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane fade" id="buzz">
-                                                    <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label>Experience</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>Expert</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label>Hourly Rate</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>10$/hr</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label>Total Projects</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>230</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label>English Level</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>Expert</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-6">
-                                                                <label>Availability</label>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>6 months</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <label>Your Bio</label>
-                                                                <br/>
-                                                                <p>Your detail description</p>
-                                                            </div>
-                                                        </div>
-                                            </div>
-                                            
-                                          </div>
-                      
-                            </div>
-                            <div class="col-md-4 img-main-rightPart">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row image-right-part">
-                                            <div class="col-md-6 pull-left image-right-detail">
-                                                <h6>PUBLICIDAD</h6>
-                                            </div>
-                                        </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                
+                                <div class="row" *ngFor="let item of  items">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
                                     </div>
-                                    <a href="http://camaradecomerciozn.com/">
-                                        <div class="col-md-12 image-right">
-                                            <img src="http://pluspng.com/img-png/bootstrap-png-bootstrap-512.png">
-                                        </div>
-                                    </a>
-                                    <div class="col-md-12 image-right-detail-section2">
-
+                                    <div class="col-md-6">
+                                        <p>{{item.nom}}</p>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label>Prename</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{item.prenom}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{item.adresse_mail}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Gouvernera</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{item.adresse}}</p> 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Cin</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{item.cin}}</p> 
+                                    </div>
+                                    
+                                </div>
+                               
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Experience</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Hourly Rate</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>10$/hr</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Total Projects</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>230</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>English Level</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>Expert</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Availability</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>6 months</p>
+                                    </div>
+                                </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Your Bio</label><br/>
+                                <p>Your detail description</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>           
 </div>
-
-<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="contact">Contactarme</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <p for="msj">Se enviará este mensaje a la persona que desea contactar, indicando que te quieres comunicar con el. Para esto debes de ingresar tu información personal.</p>
-                </div>
-                <div class="form-group">
-                    <label for="txtFullname">Nombre completo</label>
-                    <input type="text" id="txtFullname" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="txtEmail">Email</label>
-                    <input type="text" id="txtEmail" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="txtPhone">Teléfono</label>
-                    <input type="text" id="txtPhone" class="form-control">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" (click)="openModal()" data-dismiss="modal">Guardar</button>
-            </div>
-        </div>
-    </div>
-</div>
-

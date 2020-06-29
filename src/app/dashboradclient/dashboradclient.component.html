@@ -53,10 +53,25 @@
         <ul class="nav flex-column pl-1">
           
           
-          <li class="nav-item"><a class="nav-link" [routerLink]="['/dclient']" >Home</a></li>
-          <li class="nav-item"><a class="nav-link" [routerLink]="['/updateclient']" >Update Profile</a></li>
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/dclient']" >
+            <mat-icon>dns</mat-icon>Home</a>
+          </li>
+           
+            <li class="nav-item">
+              <a class="nav-link"  [routerLink]="['/profileclient']" >
+              <mat-icon>dns</mat-icon>My Profile</a>
+            </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/updateclient']" >
+              <mat-icon>dns</mat-icon>Update Profile</a>
+            </li>
           
-          <li class="nav-item"><a class="nav-link" href="">Logout</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <mat-icon>exit_to_app</mat-icon>Logout</a>
+          </li>
         </ul>
       </div>
   

@@ -41,6 +41,6 @@
     <div class="form-group">
       
     </div>
-    <button type="submit"  class="btn"  
+    <button type="submit"  class="btn"  (click)="edit($event)" [value]="items.id"
          (click)="update()"> Update</button>
   </form>

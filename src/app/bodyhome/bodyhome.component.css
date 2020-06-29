@@ -1,17 +1,22 @@
 .parallax {
 	/* The image used */
 	background-image: 
-	url("https://scontent.ftun3-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/61186065_2231945780217704_8307966020467818496_n.jpg?_nc_cat=109&_nc_oc=AQl_Rv8eYAfaQwqyN8eYz65RBZcMj6tCctyTv1vXt2dKR5WldMYKh8QoyBI7gLj57tA&_nc_ht=scontent.ftun3-1.fna&oh=ec416b660c53f92f07ad47d403e66d7b&oe=5EBDACDE");
+	url("/assets/img/women.jpg");
 	/* Set a specific height */
 	height: 500px;
   
 	/* Create the parallax scrolling effect */
 	background-attachment: fixed;
 	background-position: center;
-	background-repeat: repeat;
+	background-repeat: no-repeat;
 	background-size: cover;
 	
   }
+
+
+ 
+
+
   .par3 {
 		/* The image used */
 		
@@ -2796,15 +2801,9 @@ footer.page-footer {
   }
   
   /* 2dp elevation modified*/
-  .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
-	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  }
+ 
   
-  .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-small:hover, .btn-floating:hover {
-	-webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-			box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-  }
+  
   
   /* 6dp elevation modified*/
   .z-depth-2 {
@@ -9246,7 +9245,7 @@ footer.page-footer {
 
 
 /*  FOLLOW*/
-.Follow {	  background:url("https://scontent.ftun3-1.fna.fbcdn.net/v/t1.0-9/p960x960/70105106_1230151590479523_3782641799974092800_o.jpg?_nc_cat=100&_nc_oc=AQkUDcJ0ez_G6FHRSMzyxU8Cb_iqbs2LplGK7aUlUuQpd9XS0nE7Ss_8KJ_wt8PvZ88&_nc_ht=scontent.ftun3-1.fna&_nc_tp=1002&oh=6315dd2e3f5db2f4e87ceee32849d5b8&oe=5E91EADD")no-repeat center / contain;
+.Follow {background:url("https://scontent.ftun1-1.fna.fbcdn.net/v/t1.0-9/p960x960/47578057_1035845536576797_6229030462828838912_o.jpg?_nc_cat=100&_nc_sid=85a577&_nc_oc=AQlNKFp7aMTcUKywszjRnZQZ3fq55IyXnBbIg4ns_MQ4IQ222PSe3F3tYtjGDDSf1RE&_nc_ht=scontent.ftun1-1.fna&_nc_tp=6&oh=d2a4737aa19423d415eae86f488c6f45&oe=5EE815A6")no-repeat center / contain;
 	width: 50px;
 	height: 50px;
 	bottom: 9px;

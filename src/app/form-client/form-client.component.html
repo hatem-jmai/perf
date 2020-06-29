@@ -2,37 +2,51 @@
 <form [formGroup]="registerForm"  (ngSubmit)="registerForm.valid" novalidate></form>
 <div class="example-container" >
   
-  <mat-form-field>
-    <input matInput placeholder="first Name" [(ngModel)]="user.nom">
+  
+    <div class="card">
+      <div class="container">
+        <h3 class="title">Client Form</h3>
+        <mat-form-field>
+    <input matInput placeholder="first Name" required [(ngModel)]="user.nom">
   </mat-form-field>
 
   <mat-form-field>  
-    <input matInput placeholder="Last Name"[(ngModel)]="user.prenom">
+    <input matInput placeholder="Last Name" required  [(ngModel)]="user.prenom">
   </mat-form-field>
+      </div>
+      
+      <div class="container">
+
 
   <mat-form-field>
-    <input matInput placeholder="User name" [(ngModel)]="user.username">
+    <input matInput placeholder="User name" required [(ngModel)]="user.username">
   </mat-form-field>
   
   <mat-form-field>
-    <mat-select placeholder="Gendre" [(ngModel)]="user.genre">
+    <mat-select placeholder="Gendre" required [(ngModel)]="user.genre">
       <mat-option *ngFor="let genre of gendre" [value]="genre.viewValue">
         {{genre.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
+      </div>
+      
+      <div class="container">
   <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="user.date_naiss">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" required [(ngModel)]="user.date_naiss">
     <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Cin" type="number" class="example-left-align" [(ngModel)]="user.cin">
+    <input matInput placeholder="Cin" type="number" class="example-left-align" required [(ngModel)]="user.cin">
   </mat-form-field>
 
-  
+      </div>
+
+      
+      <div class="container">
 
   <mat-form-field>
     <input matInput placeholder="Enter your email" [formControl]="email" required [(ngModel)]="user.adresse_mail">
@@ -46,15 +60,23 @@
   </mat-form-field>
 
 
+      </div>
 
+      <div class="container">
   <mat-form-field>
   
-    <input matInput placeholder="Adresse" [(ngModel)]="user.adresse">
+    <input matInput placeholder="Adresse" required [(ngModel)]="user.adresse">
   </mat-form-field>
   
- 
+
     
-  <button mat-raised-button class="btn btn-outline-success"  type="submit" (click)="add()">SIGN UP</button>
+ 
+</div>
+<div >
+<p> <button mat-raised-button class="button"  type="submit" (click)="add()">SIGN UP</button></p>
 </div>
 
+    </div>
+  </div>
+ 
 <app-footer></app-footer>

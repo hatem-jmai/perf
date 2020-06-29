@@ -39,7 +39,7 @@ body {
 }
 
 .card--2 .card__img, .card--2 .card__img--hover {
-    background-image: url('https://scontent.ftun11-1.fna.fbcdn.net/v/t1.15752-9/67931037_451215689066882_5689526108811165696_n.jpg?_nc_cat=101&_nc_oc=AQkcxOI7GDQcem7UW2JNbHGnoiG32gi51fv9Zx9LfMVoNufOTNeVUY5IXFhTq-O5Uu8&_nc_ht=scontent.ftun11-1.fna&oh=203dc9ca7e565b333a1b4c75eaa8359e&oe=5E9AD910');
+    background-image: url('/assets/img/coach (2).jpg');
 }
 
 .card__clock {

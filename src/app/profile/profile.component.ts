@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.user=new coach();
-    this.username=this.authservice.username;
+   this.username=this.authservice.username;
     this.getOneCoach();
   }
   getOneCoach(){
@@ -26,10 +26,7 @@ export class ProfileComponent implements OnInit {
       for (let key in data)
       if(data.hasOwnProperty(key))
       this.items.push(data[key]);
-
-
-
-     
+console.log(this.items)
     });
   }
 

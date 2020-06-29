@@ -1,30 +1,25 @@
 <app-header></app-header>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Contact Us</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
 <body>
 
 	<div class="bg-contact3" style="background-image: url('assets/img/contact.jpg');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form">
+				<form class="contact3-form validate-form" [formGroup]="registerForm">
 					<span class="contact3-form-title">
 						Contact Us
                     </span>
                     <div class="wrap-input3 validate-input" data-validate="Name is required">
-						<input class="input3" type="text" name="name" placeholder="Your Name">
+						<input class="input3" type="text" name="name"  
+						[(ngModel)]="user.Name" [ngModelOptions]="{standalone: true}" placeholder="Your Name">
 						<span class="focus-input3"></span>
 					</div>
 
 					<div class="wrap-contact3-form-radio">
 					
                         <div class="wrap-input3 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input class="input3" type="text" name="email" placeholder="Your Email">
+							<input class="input3" type="email"  [ngModelOptions]="{standalone: true}" required [(ngModel)]="user.Email" 
+						 placeholder="Your Email">
+
                             <span class="focus-input3"></span>
                         </div>
 					</div>
@@ -44,12 +39,13 @@
 					</div>
 
 					<div class="wrap-input3 validate-input" data-validate = "Message is required">
-						<textarea class="input3" name="message" placeholder="Your Message"></textarea>
+						<textarea class="input3" name="message"  [(ngModel)]="user.Message" [ngModelOptions]="{standalone: true}"
+						placeholder="Your Message"></textarea>
 						<span class="focus-input3"></span>
 					</div>
 
 					<div class="container-contact3-form-btn">
-						<button class="contact3-form-btn">
+						<button class="contact3-form-btn" (click)="add()" >
 							Submit
 						</button>
 					</div>
@@ -63,5 +59,5 @@
 
 
 </body>
-</html>
+
 <app-footer></app-footer>

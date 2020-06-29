@@ -26,6 +26,7 @@ import { ChatComponent } from './chat/chat.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UpdatecoachComponent } from './updatecoach/updatecoach.component';
 import { ProfileclientComponent } from './profileclient/profileclient.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -57,6 +58,8 @@ import { ProfileclientComponent } from './profileclient/profileclient.component'
     UpdatecoachComponent,
     
     ProfileclientComponent,
+    
+    AboutUsComponent,
   
   ],
   imports: [

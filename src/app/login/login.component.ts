@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
    this.result= this.userService.loginCoach(this.user)
    .subscribe((data:any) =>{
         console.log(data),
-        error => console.log(error),
+        confirm("UserName or password false"),
+        error => {
+        console.log(error)},
         this.ch=data.type;
         this.username=data.username;
         console.log(this.username);
@@ -37,7 +39,7 @@ export class LoginComponent implements OnInit {
       if(this.ch=="client")
       this.router.navigate(['/dclient']);
       if(this.ch=="false") 
-        this.valide="username or password invalid";
+      confirm("UserName or password false");
    });
    
   }

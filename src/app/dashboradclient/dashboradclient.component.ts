@@ -20,7 +20,7 @@ name = "" ;
 
     this.name = this.chat.username ;
 
-this.authservice.getcoach().toPromise().then(data => {
+  this.authservice.getcoach().toPromise().then(data => {
   console.log(data);
   for (let key in data)
   if(data.hasOwnProperty(key))
