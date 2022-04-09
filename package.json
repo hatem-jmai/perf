@@ -32,7 +32,7 @@
     "jquery": "^3.4.1",
     "material": "^0.4.3",
     "materialize-css": "^1.0.0-rc.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng-valid-phone": "^1.0.3",
     "rxjs": "~6.4.0",
     "socket.io-client": "^2.3.0",
